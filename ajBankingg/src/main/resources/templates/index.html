@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header(~{::link})">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Courgette&display=swap" rel="stylesheet">
+    <link href="/css/stylelogin.css" rel="stylesheet">
+</head>
+<body>
+<!-- Login Section -->
+    <div class="mt-4">
+	    <div class="jumbotron" id="reg-3">
+	        <img src="/images/logo (5).png" alt="AJ Bank" height="300px" width="300px"> 
+       	</div>
+    </div>
+        <div class="row ">
+            <div class="col-sm">
+            	<div class="container">Login</div>
+            <form th:action="@{/index}" method="post">
+                <div class="container">
+                    <div class="container form-floating mb-3">
+                        <input type="text" roleId="username" class="form-control floatingInput" id="username" 
+                        	placeholder="username" name="username" maxlength="10" size="10" required="required" 
+                        	autofocus="autofocus"/>
+                        <label for="floatingInput" id="reg-4">Unique ID</label>
+                    </div>
+                    <div id="reg-7">
+                        <div class="container form-floating">
+                        <input type="password" roleId="inputPassword" class="form-control floatingPassword" 
+                        id="password" placeholder="Password" name="password" required="required"/>
+                        <label for="floatingPassword" id="reg-4">Password</label>
+                    	</div>
+                	</div>
+                	<input type="checkbox" name="remember-me" id="remember-me"/> &nbsp;
+                	<span class="reg-11">Remember me</span> 
+            
+                <button type="submit" class=" container btn btn-outline-secondary reg-7"><span id="reg-6">Sign In</span></button>
+                <div class="reg-9" th:if="${param.error}">Invalid username and password!</div>
+            	<div class="reg-10" th:if="${param.logout}">You have been logged out!</div>
+            	</div>
+            </form>
+		</div>
+			
+	</div>
+	<div class="container"><br>
+            <span class="reg-12">Don't have a account with our bank? Join us...</span>
+            <div class="reg-8"><a th:href="@{/signup}">Registration</a></div>
+    	</div>
+	
+
+<div th:replace="common/header :: body-bottom-scripts(~{::script})">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>>
+</div>
+
+</body>
+</html>

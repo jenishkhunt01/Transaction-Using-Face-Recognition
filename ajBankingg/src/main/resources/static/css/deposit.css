@@ -1,0 +1,38 @@
+
+body{
+    background-attachment: fixed;
+    background-image: linear-gradient(to right top, #0f0d0e, #191618, #211e22, #28262c, #2f2f37, #393c45, #424953, #4b5761, #5b6d75, #6d838a, #809a9d, #95b1b0);}
+#reg-1{
+    font-weight: 700;
+    color: #cf000f;
+    font-family: 'Courgette', cursive;
+}
+#reg-2{
+    font-weight: 700;
+    color: black;
+    font-family: 'Courgette', cursive;
+}
+#reg-3{
+    height: 10px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+.reg-4{
+    color: #1a0000;
+}
+.reg-5{
+    color: white;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: white!important;
+}
+.reg-6{
+    color: #28262c;
+}
+div.dataTables_wrapper div.dataTables_filter input{
+    margin-right: 1em;
+}
+div.dataTables_wrapper div.dataTables_info{
+    margin-top: 1em!important;
+}

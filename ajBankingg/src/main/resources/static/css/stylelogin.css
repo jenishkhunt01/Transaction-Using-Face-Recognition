@@ -1,0 +1,103 @@
+html{
+    overflow: hidden;
+}
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: radial-gradient(circle, #51555b, #3e484c, #2f3c3b, #242f28, #1e2117);
+}
+#reg-1{
+    font-weight: 700;
+    color: #cf000f;
+    font-family: 'Courgette', cursive;
+}
+#reg-2{
+    font-weight: 700;
+    color: black;
+    font-family: 'Courgette', cursive;
+}
+#reg-3{
+	height: 10px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+.col-sm{
+    color: aliceblue;
+    font-size: 30px;
+    font-family: 'Abel', sans-serif;
+}
+.floatingInput, .floatingPassword{
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 400px;
+    color: wheat;
+    font-family: 'Abel', sans-serif;
+    font-size: 25px;
+}
+
+#reg-4{
+    font-size: 20px;
+    color: goldenrod;
+    font-family: 'Abel', sans-serif;
+}
+.reg-7{
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.btn{
+    display: flex;
+    width: 200px;
+    margin-top: 20px;
+    font-family: 'Abel', sans-serif;
+    font-weight: 700;
+    height: 50px;
+    text-align: center;
+    color: white;
+}
+#reg-6{
+    margin-left: 50px;
+    font-size: 25px;
+}
+input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    background-color: transparent;
+    color: white;
+}
+.reg-8 a{
+    font-family: 'Abel', sans-serif;
+    color: #adb0b6;
+    text-decoration: none;
+    font-size: 30px;
+}
+.reg-8 a:hover{
+    color: goldenrod;
+}
+.reg-9{
+    font-family: 'Abel', sans-serif;
+    color: red;
+    font-size: 20px;
+}
+.reg-10{
+    font-family: 'Abel', sans-serif;
+    color: green;
+    font-size: 20px;
+}
+.reg-11{
+	font-family: 'Abel', sans-serif;
+	font-size: 1rem;
+}
+.reg-12{
+	font-size: 30px;
+	color: white;
+	font-family: 'Abel', sans-serif;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="common/header :: common-header(~{::link})">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	    <link rel="stylesheet" href="/css/styleregister.css">
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Courgette&display=swap" rel="stylesheet">
+	</head>
+
+<body>
+    <div class="mt-4">
+        <div class="jumbotron" id="reg-3">
+	        <img src="/images/logo (5).png" alt="AJ Bank" height="300px" width="300px">  
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+            First Time User Registration
+            </div>
+        </div>
+    </div>
+    <form method="post" th:action="@{/signup}">
+        <div class="container reg-5">
+            <div class="container form-floating mb-3">
+                <input type="text" th:value="${user.firstName}" class="form-control floatingInput" id="firstName" placeholder="firstName" name="firstName" roleId="firstname" required="required"/>
+                <label for="floatingInput" id="reg-4">First Name</label>
+            </div>
+            <div class="container form-floating mb-3">
+                <input type="text" th:value="${user.lastName}" class="form-control floatingInput" id="lastName" placeholder="lastName" name="lastName" roleId="lastname" required="required"/>
+                <label for="floatingInput" id="reg-4">Last Name</label>
+            </div>
+        </div>
+        <div class="container reg-8">
+            <div class="container form-floating mb-3">
+            	<input type="text" th:value="${user.email}" class="form-control floatingPassword" id="email" placeholder="Email" name="email" roleId="email" required="required"/>
+                <label for="floatingInput" id="reg-4">Email</label><span class="bg-danger pull-right" th:if="${emailExists}">Email already exists</span>
+            </div>
+            <div class="container form-floating">
+            	<input type="text" th:value="${user.phone}" class="form-control floatingInput" id="phone" placeholder="xxx-xxx-xxxx" name="phone" required="required" roleId="phone"/>
+		        <label for="floatingInput" id="reg-4">Mobile</label>
+            </div>
+        </div>
+            <div class="container">
+	            <div id="reg-7">
+	                <div class="container form-floating">
+		                <input type="text" th:value="${user.username}" class="form-control floatingInput" id="username" placeholder="username" name="username" roleId="usernamee" maxlength="10" size="10" required="required"/>
+                		<label for="floatingInput" id="reg-4">Unique ID</label><span class="bg-danger pull-right" th:if="${usernameExists}">Unique ID already exists</span>
+	            	</div>
+	            	<div class="container form-floating">
+	            		<input type="password" th:value="${user.password}" class="form-control floatingPassword" id="password" placeholder="Password" name="password" roleId="password" required="required"/>
+                		<label for="floatingPassword" id="reg-4">Password</label>
+            			<div class="checkbox reg-9">
+	                    	<label>
+	                     	   <input id="showPassword" type="checkbox" /><span class="reg-9"> Show Password</span>
+	                   		</label>
+	                	</div>
+		            </div>
+	        	</div>
+            </div>
+
+        <button type="submit" class=" container btn btn-outline-secondary"><span id="reg-6">Submit</span></button>
+		<div class="container"><br>
+            <div class="reg-13"><a th:href="@{/index}">Cancel</a></div>
+    	</div>
+    </form>
+
+
+                             
+                            
+                             
+                    
+
+
+	<div th:replace="common/header :: body-bottom-scripts(~{::script})">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>>
+	</div>
+
+</body>
+</html>

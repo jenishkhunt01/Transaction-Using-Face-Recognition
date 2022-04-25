@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/deposit.css">
+    <title>ajBank</title>
+</head>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/ajBank}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav">
+                <li class="hidden">
+                    <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle reg-4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Accounts </b><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a  th:href="@{/account/primaryAccount}">Primary</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a th:href="@{/account/savingsAccount}">Savings</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle reg-4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Transfer </b><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/transfer/betweenAccounts}">Between Accounts</a></li>
+                        <li><a th:href="@{/transfer/toSomeoneElse}">To Someone Else</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a th:href="@{/transfer/recipient}">Add/Edit Recipient</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle reg-4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Appointment </b><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/appointment/create}">Schedule an Appointment</a></li>
+                    </ul>
+                </li>
+            </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle reg-4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Me </b><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{/user/profile}">Profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <div class="mt-4">
+	    <div class="jumbotron" id="reg-3">
+	        <img src="/images/logo (5).png" alt="AJ Bank" height="300px" width="300px"> 
+       	</div>
+    </div>
+
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6">
+                <form th:action="@{/account/deposit}" method="post">
+                    <div class="form-group" >
+                        <label for="accountType" class="reg-5">1. Please select the account you would like to deposit:</label>
+                        <select class="form-control" th:value="${accountType}" name="accountType" id="accountType" required="required">
+                            <option disabled="disabled" selected="selected"> -- select your account -- </option>
+                            <option class="reg-6">Primary</option>
+                            <option class="reg-6">Savings</option>
+                        </select>
+                        <br />
+                    </div>
+
+                    <div class="form-group reg-5">
+                        <label class="reg-5">2. Please specify the amount you would like to deposit: </label>
+                        <span class="input-group-addon">Amount</span>
+                        <input th:value="${amount}" type="text" name="amount" id="amount" class="form-control" aria-label="Amount (to the nearest dollar)"/>
+                    </div>
+
+                    <input type="hidden"
+                        name="${_csrf.parameterName}"
+                        value="${_csrf.token}"/>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Deposit</button>
+                </form>
+
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
